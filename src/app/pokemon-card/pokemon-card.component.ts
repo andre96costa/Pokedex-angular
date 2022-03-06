@@ -1,15 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { Pokemon } from 'src/model/Pokemon';
-
+import { getPokemonImage, getPokemonNumber, Pokemon } from 'src/model/Pokemon';
 
 @Component({
-    selector: 'app-pokemon-card',
-    templateUrl: './pokemon-card.component.html',
-    styleUrls: ['./pokemon-card.component.sass']
+  selector: 'app-pokemon-card',
+  templateUrl: './pokemon-card.component.html',
+  styleUrls: ['./pokemon-card.component.sass'],
 })
 export class PokemonCardComponent {
+  @Input()
+  public pokemon!: Pokemon;
 
-    @Input()
-    public pokemon!: Pokemon;
+  public getPokemonImage = getPokemonImage;
 
+  public getPokemonNumber = getPokemonNumber;
 }
